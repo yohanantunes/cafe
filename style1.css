@@ -1,0 +1,659 @@
+/* ==================================================
+              CONFIGURAÇÕES GERAIS
+================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    background:#F2F2F2;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/* ==================================================
+                      CABEÇALHO
+================================================== */
+
+header{
+
+    width:100%;
+
+}
+
+
+header img{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+
+/* ==================================================
+                    MENU PRINCIPAL
+================================================== */
+
+#menu-principal{
+
+    background:#2F8EF3;
+
+    color:white;
+
+    padding:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    /*
+        NOVO: position:sticky
+
+        O elemento se comporta normalmente
+        enquanto a página está no início.
+
+        Quando ele chega ao topo da tela,
+        passa a permanecer "grudado" ali
+        durante a rolagem.
+    */
+
+    position:sticky;
+
+
+    /*
+        top:0
+
+        Diz que, quando o menu ficar sticky,
+        deverá ficar encostado no topo da tela.
+    */
+
+    top:0;
+
+
+    /*
+        NOVO: z-index
+
+        Define qual elemento ficará por cima
+        quando dois elementos se sobrepõem.
+
+        Quanto maior o número,
+        maior a prioridade visual.
+    */
+
+    z-index:1000;
+
+}
+
+
+#menu-principal a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+#menu-principal span{
+
+    color:white;
+
+}
+
+
+/* ==================================================
+                         CHAMADA
+================================================== */
+
+#chamada{
+
+    background:#F8B3A2;
+
+    padding:35px;
+
+    text-align:center;
+
+    margin-top:5px;
+
+}
+
+
+#chamada h2{
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+#chamada p{
+
+    line-height:25px;
+
+    margin-bottom:20px;
+
+}
+
+
+.botao-chamada{
+
+    width:160px;
+
+    display:block;
+
+    margin:20px auto;
+
+}
+
+
+/* ==================================================
+                         BOTÕES
+================================================== */
+
+button{
+
+    background:#087BEA;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+button:hover{
+
+    background:#005BBB;
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==================================================
+                   NOSSOS PRODUTOS
+================================================== */
+
+#produtos{
+
+    background:#FFF2A8;
+
+    padding:15px;
+
+    margin-top:5px;
+
+    text-align:center;
+
+}
+
+
+#produtos h2{
+
+    margin-bottom:3px;
+
+}
+
+
+#produtos > p{
+
+    margin-bottom:15px;
+
+}
+
+
+.cards{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==================================================
+                       PRODUTO
+================================================== */
+
+.produto{
+
+    flex:1;
+
+    background:#FFFDF5;
+
+    padding:12px;
+
+    text-align:center;
+
+    min-width:200px;
+
+    transition:0.3s;
+
+
+    /*
+        NOVO: position:relative
+
+        O elemento continua exatamente na posição
+        normal da página.
+
+        Porém, ele passa a servir como referência
+        para elementos filhos que usam
+        position:absolute.
+
+        Neste projeto, o selo PROMOÇÃO será
+        posicionado em relação ao card.
+    */
+
+    position:relative;
+
+}
+
+
+.produto:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==================================================
+                      SELO PROMOÇÃO
+================================================== */
+
+.promocao{
+
+    /*
+        NOVO: position:absolute
+
+        Retira o elemento do fluxo normal da página.
+
+        Agora podemos posicioná-lo livremente
+        utilizando top, right, bottom e left.
+
+        Como o pai .produto possui
+        position:relative, o selo será posicionado
+        em relação ao próprio card.
+    */
+
+    position:absolute;
+
+
+    /*
+        top:8px
+
+        Coloca o selo a 8 pixels do topo do card.
+    */
+
+    top:8px;
+
+
+    /*
+        right:8px
+
+        Coloca o selo a 8 pixels da lateral direita.
+    */
+
+    right:8px;
+
+
+    background:#D32F2F;
+
+    color:white;
+
+    padding:6px 10px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    border-radius:5px;
+
+
+    /*
+        z-index
+
+        Garante que o selo fique por cima da imagem.
+    */
+
+    z-index:10;
+
+}
+
+
+/* ==================================================
+                 IMAGENS DOS PRODUTOS
+================================================== */
+
+.imagem-produto{
+
+    width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+    margin-bottom:10px;
+
+}
+
+
+.produto h3{
+
+    margin-bottom:8px;
+
+}
+
+
+.produto p{
+
+    margin-bottom:10px;
+
+}
+
+
+/* ==================================================
+                      INFORMAÇÕES
+================================================== */
+
+#informacoes{
+
+    display:flex;
+
+    margin-top:5px;
+
+    gap:5px;
+
+}
+
+
+#loja{
+
+    flex:1;
+
+    background:#D6A9EB;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+
+#horario{
+
+    flex:1;
+
+    background:#CDEB98;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+
+#loja img,
+#horario img{
+
+    width:100%;
+
+    height:160px;
+
+    object-fit:cover;
+
+    margin-bottom:10px;
+
+}
+
+
+#loja h2,
+#horario h2{
+
+    margin-bottom:8px;
+
+}
+
+
+#loja p,
+#horario p{
+
+    margin-bottom:4px;
+
+}
+
+
+/* ==================================================
+                          FOOTER
+================================================== */
+
+footer{
+
+    background:#494949;
+
+    color:white;
+
+    padding:18px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom-left-radius:16px;
+
+    border-bottom-right-radius:16px;
+
+}
+
+
+footer p{
+
+    font-size:13px;
+
+}
+
+
+#menu-rodape{
+
+    background:none;
+
+    padding:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+#menu-rodape a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+}
+
+
+#menu-rodape span{
+
+    color:white;
+
+}
+
+
+/* ==================================================
+                    WHATSAPP FIXO
+================================================== */
+
+.whatsapp{
+
+    /*
+        NOVO: position:fixed
+
+        Faz o elemento ficar preso em uma posição
+        da TELA.
+
+        Mesmo que o usuário role a página,
+        o botão continua aparecendo no mesmo lugar.
+    */
+
+    position:fixed;
+
+
+    /*
+        right:20px
+
+        Mantém o botão a 20 pixels
+        da lateral direita da tela.
+    */
+
+    right:20px;
+
+
+    /*
+        bottom:20px
+
+        Mantém o botão a 20 pixels
+        da parte inferior da tela.
+    */
+
+    bottom:20px;
+
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 18px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+
+    /*
+        Garante que o botão fique acima
+        dos demais elementos.
+    */
+
+    z-index:2000;
+
+}
+
+
+/* ==================================================
+                  VOLTAR AO TOPO
+================================================== */
+
+.voltar-topo{
+
+    /*
+        Também utilizamos fixed,
+        porque queremos que o botão
+        permaneça na tela.
+    */
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:80px;
+
+    background:#333333;
+
+    color:white;
+
+    text-decoration:none;
+
+    width:40px;
+
+    height:40px;
+
+    text-align:center;
+
+    padding-top:10px;
+
+    border-radius:50%;
+
+    z-index:2000;
+
+}
+
+
+/* ==================================================
+                    RESPONSIVIDADE
+================================================== */
+
+@media(max-width:850px){
+
+    .cards{
+
+        flex-direction:column;
+
+    }
+
+
+    #informacoes{
+
+        flex-direction:column;
+
+    }
+
+
+    footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+    }
+
+
+    #menu-principal{
+
+        flex-wrap:wrap;
+
+    }
+
+}
